@@ -16,8 +16,12 @@ The function should:
 */
 
 
-function createMenuItem(/*Your code here*/){
-  /*Your code here*/
+function createMenuItem(name, price, category){
+    return {
+      name : name,
+      price : price,
+      category : category
+    }
 }
 
 
@@ -31,6 +35,9 @@ Test your createMenuItems function by doing the following:
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
+console.log (createMenuItem("Pizza", 5, "Lunch"));
+console.log (createMenuItem("Steak", 10, "Dinner"));
+console.log (createMenuItem("Eggs", 5, "Breakfast"));
 
 
 
@@ -51,6 +58,14 @@ const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
+  discount(string) {
+    if (string === 'teacher' || string === 'student'){
+      return this.price - this.price * .25
+    }
+    if (string === 'public'){
+      return this.price - this.price * .1
+    }
+  },
   
 }
 
@@ -72,7 +87,7 @@ const reviews = [
 Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
-
+console.log(reviews[5].feedback)
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 (not auto-tested): 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -80,7 +95,8 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
   1. Add this feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
   2. log the reviews array to the console to check your work
 */
-
+reviews[7].feedback = "this place is chill with really cool people, great for getting work done on weekdays"
+console.log(reviews[7]);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -93,8 +109,14 @@ Write a function that creates an object with name, rating, feedback, add the new
 */
 
 
-function addReview(/*Your Code Here */){
-  /*Your Code Here */
+function addReview(arr, name, rating, feedback){
+  let obj = {
+    name:name,
+    rating: rating,
+    feedback: feedback
+  }
+  arr.push(obj)
+  return arr;
 }
 
 
